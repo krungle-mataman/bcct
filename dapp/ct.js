@@ -32,6 +32,14 @@ function InitKonten(data){
     }
   });
 
+  data.ctContractSaldo="0";
+  web3.eth.getBalance(data.ctContract,(err,value) => {
+    if (err) { console.log(err); }
+    if (!err) { 
+      //v = web3.utils.fromWei(value.toNumber, 'ether');
+      data.ctContractSaldo = value;
+    }
+  });
 
 
 
@@ -198,9 +206,13 @@ function initVue() {
 
 
     ctManager : "",
-    ctManagerSaldo : "master-saldo",
+    ctManagerSaldo : "",
+    
+    ctContract : "",
+    ctContract : "",
 
     bcWaehrung : "ETH",
+    
     bcInfo1 :"",
     bcInfo2 :"",
     bcInfo3 :"",
