@@ -1,1 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="bc.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <link rel="stylesheet" href="fg.css">
 
+    <script type="text/javascript"> bcPrototypVersion="1.01"</script>
+   
+    <script type="text/javascript"> kpManager="0x427EF5Aec9ca3e2adD827C21c866dD83B7c127e1"</script>
+    <script type="text/javascript"> bcSpedition="0x28574a361D06abddfC7660049B627cE16C550649"</script>
+    <script type="text/javascript"> bcVersicherung1="0x212795dA9B7a58F9FD227381A07d1Cf74d42e771"</script>
+    <script type="text/javascript"> bcVersicherung2="0x212795dA9B7a58F9FD227381A07d1Cf74d42e771"</script>
+    <script type="text/javascript"> bcBank="0xE249Ec6CCB531E000BaE2bc0B6308A8621f06c05"</script>
+
+
+    <script type="text/javascript"> fgDefaultGaslimit = "200000000"</script>
+    <script type="text/javascript"> fgDefaultGasprice = "10000000000"</script>
+    <script type="text/javascript"> fgDefaultGas = "300000000"</script>
+    <script type="text/javascript"> fgGaslimit = 200000</script>
+
+    <script type="text/javascript"> gebuehr2=2000000000000000000000</script>
+    <script type="text/javascript"> gebuehr1=10000000000000000000</script>
+    <script type="text/javascript"> gebuehr0=0;</script>
+  
+    <script>
+        window.onload = function() {
+            initVue();
+         }
+    </script>
+  
+  
+
+</head>
+
+<style>
+</style>
+<body>
+  <div id="app">
+    <div class="titel">
+      <h3><img src="evanlogo.png" width="100" height="100" align="right"> </h3>
+      <h1 >Community-Coin</h1>
+      <h2>Eine Demo-App zur Anzeige der Token-Eigenschaften</h2>
+    </div>
+    <div class="nachricht">
+      <table>
+        <tr>
+          {{ Systeminfo }}
+        </tr>
+      </table>
+    </div>
+
+ 
+    <div class="abschnitt">Blockchain-Netzwerk</div>
+      <div class="ebene1">
+        <table style="table-layout:fixed" class="ebene1">
+          <th colspan="3">
+            Blockchain-Netzwerk ({{bcVerbindung}})
+          </th>
+          <tr>  
+            <td class="eingabe" size="6">{{ bcNetzwerk }} </td> 
+            <td class="eingabe" size="6">{{ bcVersion }} </td> 
+            <td class="eingabe" size="6">{{ bcId }} </td> 
+          </tr>
+          <tr>
+            <td class="eingabe" size="6">{{ bcInfo1 }} </td> 
+            <td class="eingabe" size="6">{{ bcInfo2 }} </td>       
+            <td class="eingabe" size="6">{{ bcInfo3 }} </td>
+          </tr>
+          <tr>  
+            <td class="eingabe" size="6">{{ bcInfo4 }} </td>      
+            <td class="eingabe" size="6">{{ bcInfo5 }} </td>     
+            <td class="eingabe" size="6">{{ bcInfo6 }} </td> 
+          </tr>
+          <tr>  
+            <td class="eingabe" size="6">{{ bcInfo7 }} </td>      
+            <td class="eingabe" size="6">{{ bcInfo8 }} </td>     
+            <td class="eingabe" size="6">{{ bcInfo9 }} </td> 
+        </table>  
+ 
+
+        <table>
+          <div class="aktionen">
+          <tr>Aktionen
+          </tr>
+          <tr>
+            <td>
+              <button v-on:click="BlockchainAktualisieren" id="bt2" class="action">Blockchain aktualisieren</button>
+              <button v-on:click="BlockchainAnzeigen" id="bt2" class="action">Netzwerk anzeigen</button>
+            </td>
+          </tr>
+        </table>
+      </div>  
+
+  
+      
+      <div class="abschnitt">Acounts</div>
+        <div class="ebene1">
+          <table>
+            <tr>
+              <th>Funktion</th>
+              <th>Konto</th>
+              <th>Saldo</th>
+              <th>Währung</th>
+            </tr>
+            <tr>
+              <td class="feld">Kooperations-Manager</td>
+              <td><input v-model="kpManager" size="50" class="eingabe" ></td>
+              <td class="adresse">{{ kpManagerSaldo }} </td>
+              <td class="adresse">{{ bcWaehrung }} </td>
+            </tr>
+            <tr>
+                <td class="feld">Versicherung digitalNr1</td>
+                <td><input v-model="bcVersicherung1" size="50" class="eingabe" ></td>
+                <td class="adresse">{{ bcVersicherung1Saldo }} </td>
+                <td class="adresse">{{ bcWaehrung }} </td>
+              </tr>
+              <tr>
+                <td class="feld">Versicherung AsienInvasion (LTD)</td>
+                <td><input v-model="bcVersicherung2" size="50" class="eingabe" ></td>
+                <td class="adresse">{{ bcVersicherung2Saldo }} </td>
+                <td class="adresse">{{ bcWaehrung }} </td>
+              </tr>
+            <tr>
+                <td class="feld">Spedition fast&furios</td>
+                <td><input v-model="bcSpedition" size="50" class="eingabe" ></td>
+                <td class="adresse">{{ bcSpeditionSaldo }} </td>
+                <td class="adresse">{{ bcWaehrung }} </td>
+              </tr>
+    
+            <tr>
+              <td class="feld">Bank Traditionale AG</td>
+              <td><input v-model="bcBank" size="50" class="eingabe" ></td>
+              <td class="adresse">{{ bcBankSaldo }} </td>
+              <td class="adresse">{{ bcWaehrung }} </td>
+            </tr>
+          </table>
+
+          <div class="ebene1">
+            <table>
+              <div class="aktionen">
+              <tr>Aktionen
+              </tr>
+              <tr>
+                <td>
+                  <button v-on:click="KontenAktualisieren" id="bt2" class="action">Konten aktualisieren</button>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>     
+
+          <div class="abschnitt">Transaktion</div>
+          <div class="ebene1">
+      
+            <table>
+              <tr>
+                <th>Parameter</th>
+                <th>Wert</th>
+                <th>Währung</th>
+              </tr>
+              <tr>
+                <td class="feld">DefaultGaslimit</td>
+                <td><input v-model="fgDefaultGaslimit" size="50" class="eingabe" ></td>
+                <td class="adresse">{{ bcWaehrung }}</td>
+
+              </tr>
+              <tr>
+                  <td class="feld">DefaultGas</td>
+                  <td><input v-model="fgDefaultGas" size="50" class="eingabe" ></td>
+                  <td class="adresse">{{ bcWaehrung }} </td>
+                </tr>
+                <tr>
+                  <td class="feld">DefaultGasPrice</td>
+                  <td><input v-model="fgDefaultGasprice" size="50" class="eingabe" ></td>
+                  <td class="adresse">{{ bcWaehrung }} </td>
+                </tr> 
+
+              <tr>
+                <td class="feld">Gebühr 2</td>
+                <td><input v-model="bcGebuehr2" size="50" class="eingabe" ></td>
+                <td class="adresse">{{ bcWaehrung }} </td>
+              </tr>
+              <tr>
+                <td class="feld">Gebühr 1</td>
+                <td><input v-model="bcGebuehr1" size="50" class="eingabe" ></td>
+                <td class="adresse">{{ bcWaehrung }} </td>
+              </tr>
+              <tr>
+                <td class="feld">Gebühr 0</td>
+                <td><input v-model="bcGebuehr0" size="50" class="eingabe" ></td>
+                <td class="adresse">{{ bcWaehrung }} </td>
+              </tr> 
+            </table>
+  
+            <div class="ebene1">
+              <table>
+                <div class="aktionen">
+                <tr>Aktionen
+                </tr>
+                <tr>
+                  <td>
+                    <button v-on:click="TransaktionAktualisieren" id="bt2" class="action">Transaktionsparameter aktualisieren</button>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>  
+
+          <div class="abschnitt">Kooperationen</div>
+    
+          <div class="ebene1">
+            <table>
+              <div class="aktionen">
+              <tr>Aktionen
+              </tr>
+              <tr>
+                <td>
+                  <button v-on:click="NaechsteSeite" id="bt2" class="action">Kooperation anzeigen</button>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="fusszeile">
+              <h3> 
+                <img src="bcclogo.png" width="150" height="20"> 
+                bccCoin - ein Produkt der Block-Chain-Community ( {{ bcPrototypVersion }} )
+                <link rel="stylesheet" href="impressum.html">
+                <a href="impressum.html">....mehr..</a>
+              </h3>
+
+      
+            </div>
+            
+        </div>  
+
+    </div>
+
+</div>
+
+
+  
+  </div>
+</body>
+</html>
