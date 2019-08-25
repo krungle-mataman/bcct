@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="bc.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <link rel="stylesheet" href="fg.css">
+
+    <script type="text/javascript"> bcPrototypVersion="1.00"</script>
+   
+    <script type="text/javascript"> kpManager="0x427EF5Aec9ca3e2adD827C21c866dD83B7c127e1"</script>
+    <script type="text/javascript"> bcSpedition="0x28574a361D06abddfC7660049B627cE16C550649"</script>
+    <script type="text/javascript"> bcVersicherung1="0x212795dA9B7a58F9FD227381A07d1Cf74d42e771"</script>
+    <script type="text/javascript"> bcVersicherung2="0x212795dA9B7a58F9FD227381A07d1Cf74d42e771"</script>
+    <script type="text/javascript"> bcBank="0xE249Ec6CCB531E000BaE2bc0B6308A8621f06c05"</script>
+
+
+    <script type="text/javascript"> fgDefaultGaslimit = "200000000"</script>
+    <script type="text/javascript"> fgDefaultGasprice = "10000000000"</script>
+    <script type="text/javascript"> fgDefaultGas = "300000000"</script>
+    <script type="text/javascript"> fgGaslimit = 200000</script>
+
+    <script type="text/javascript"> gebuehr2=2000000000000000000000</script>
+    <script type="text/javascript"> gebuehr1=10000000000000000000</script>
+    <script type="text/javascript"> gebuehr0=0;</script>
+  
+    <script>
+        window.onload = function() {
+            initVue();
+         }
+    </script>
+  
+  
+
+</head>
+
+<style>
+
+</style>
+<body>
+  <div id="app">
+    <div class="titel">
+      <h3><img src="evanlogo.png" width="100" height="100" align="right"> </h3>
+      <h1 >coin&token</h1>
+      <h2>Eine Demo-App zur Anzeige von Token und Coin Eigenschaften </h2>
+    </div>
+    <div class="nachricht">
+      <table>
+        <tr>
+          {{ Systeminfo }}
+        </tr>
+      </table>
+    </div>
+
+           <div class="abschnitt">Änderungen</div>
+    
+          <div class="ebene1">
+            <table>
+              <th>Version</th>
+              <th>Änderungen</th>
+              <th>Betroffen</th>
+                              <tr>
+                <td>1.03</td>
+                <td>Aktualisierungen nach Übernahme Remix</td> 
+                <td>kp.js</td>
+              </tr>
+                
+              <tr>
+                <td>0.01</td>
+                <td>Erste Erstelllung</td> 
+                <td>alles</td>
+              </tr>
+            </table>
+          </div>
+          <div class="fusszeile">
+              <h3> 
+                <img src="bcclogo.png" width="150" height="20"> 
+                FrachtGUT - ein Produkt der Block-Chain-Community ( {{ bcPrototypVersion }} )
+              </h3>
+
+      
+            </div>
+            
+        </div>  
+
+    </div>
+
+</div>
+
+
+  
+  </div>
+</body>
+</html>
