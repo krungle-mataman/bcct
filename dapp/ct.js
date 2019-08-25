@@ -23,12 +23,12 @@ function InitKonten(data){
 
 
   var v;
-  data.bcManagerSaldo="0";
-  web3.eth.getBalance(data.bcManagerDef,(err,value) => {
+  data.ctManagerSaldo="0";
+  web3.eth.getBalance(data.ctManager,(err,value) => {
     if (err) { console.log(err); }
     if (!err) { 
       //v = web3.utils.fromWei(value.toNumber, 'ether');
-      data.bcManagerSaldo = value;
+      data.ctManagerSaldo = value;
     }
   });
 
@@ -123,7 +123,7 @@ function InitBlockchain (data){
     if (!err) {
       console.log("kein fehler: " + value);
       data.bcInfo4 = "Default-Accounts: " + value[0];
-      data.bcManagerDef = value[0];
+      data.ctManager = value[0];
   
     }
   });
@@ -197,8 +197,8 @@ function initVue() {
   const data = {
 
 
-    bcManagerDef : "",
-    bcManagerSaldo : "master-saldo",
+    ctManager : "",
+    ctManagerSaldo : "master-saldo",
 
     bcWaehrung : "ETH",
     bcInfo1 :"",
