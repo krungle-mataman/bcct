@@ -1,0 +1,149 @@
+
+table, th, td, tr { border: grey; border-block-style: inherit;width:"90%"}
+th {background-color: lightblue;color: floralwhite;font-size: smaller;font-style: oblique;margin-top:5em;padding: 5px}
+td {border: blue;background-color: white;font-size:x-large large;font-style: normal;margin: 3px;padding: 8px}
+  #coll         { border-collapse: collapse; }
+  #sepa         { border-collapse: separate; margin-top: 2em; }
+  caption       { text-align: left; }
+
+h1  {font-size: x-large;color:greenyellow}
+h2 {font-size: large;font-style: italic}
+
+    body {
+       background-color:#E0E0E0;
+       color: black;
+       font-weight: bold;
+       font-family: Arial;
+       font-size: 120%;
+    }
+
+    .titel {
+       background-color: green;
+       color: yellow;
+       padding: 5px;
+       margin-top: 5px;
+       font-style: initial;
+    }
+
+    .abschnitt {
+      background-color: darkblue;
+      color: white;
+      padding: 5px;
+      margin-top: 5px;
+      font-style: initial;
+   }
+
+   .nachricht {
+      color: red;
+      font-size: 16px;
+      font-style: italic;
+      padding: 8px;
+      margin: 5px;
+    }
+   
+
+    .system {
+      background-color: gray;
+      color: darkgray;
+      font-size: 10px;
+      font-style: italic;
+      padding: 2px;
+      margin: 2;
+    }
+       
+    
+    .aktionen {
+       background-color: blueviolet(102, 255, 110);
+       color: green;
+       padding: 5px;
+       box-shadow: 5px;
+       font-style: oblique;
+       box-shadow: 10px 20px 30 px blueviolet;
+       border-radius: 10 px;
+    
+    } 
+
+
+    .eingabe {
+       background-color: crimson(102, 255, 110);
+       color: darkgray;
+       padding: 5px;
+       margin: 1px;
+       font-style: italic;
+
+    } 
+
+    .id {
+       background-color: white(102, 255, 110);
+       color: darkblue;
+       padding: 5px;
+       margin: 5px;
+       font-style: italic;
+       widows: 5px;
+
+    } 
+
+
+    .adresse {
+       background-color: white(102, 255, 110);
+       color: grey;
+       padding: 5px;
+       margin: 5px;
+       font-style: italic;
+       widows: 25px;
+
+    } 
+
+   .feld {
+      background-color: lightgray;
+      color: darkgray;
+      padding: 5px;
+      margin: 5px;
+      font-style: oblique;
+   } 
+
+   .element {
+      background-color: darkblue;
+      color: darkgray;
+      padding: 1px;
+      margin: 1px;
+      font-style: italic;
+   } 
+
+    
+    .ebene3 {
+       background-color: darkgray;
+       color: white;
+       padding: 10px;
+       margin: 10;
+    }
+
+    .ebene2 {
+       background-color: dimgrey;
+       color: black;
+       padding: 5px;
+       margin: 5px;
+       font-style: italic;
+    } 
+
+    .ebene1 {
+       background-color: lightgray;
+       color: black;
+       padding: 5px;
+       margin: 5px;
+       font-style: italic;
+       align-content: center;
+    } 
+
+    #bt1 {
+      background-image: url("buttonGO.png");
+      background-position: 0em;
+      background-repeat: no-repeat;
+    }
+
+    #bt2 {
+      background-image: url("button.png");
+      background-position: 0em;
+      background-repeat: no-repeat;
+    }
+
