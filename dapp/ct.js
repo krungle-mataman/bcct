@@ -209,7 +209,7 @@ function initVue() {
     ctManagerSaldo : "",
     
     ctContract : "",
-    ctContract : "",
+    ctContractSaldo : "",
 
     bcWaehrung : "ETH",
     
@@ -279,6 +279,7 @@ function initVue() {
       InitBlockchain(data);
       InitTransaktion(data);
       InitKonten(data); 
+      data.ctContract="0x427EF5Aec9ca3e2adD827C21c866dD83B7c127e1";
       console.log("Initialisierung erfolgreich abgeschlossen");
 
     } catch (error) {
