@@ -6,14 +6,9 @@
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <link rel="stylesheet" href="fg.css">
 
-    <script type="text/javascript"> bcPrototypVersion="1.01"</script>
+    <script type="text/javascript"> bcPrototypVersion="0.01"</script>
    
     <script type="text/javascript"> kpManager="0x427EF5Aec9ca3e2adD827C21c866dD83B7c127e1"</script>
-    <script type="text/javascript"> bcSpedition="0x28574a361D06abddfC7660049B627cE16C550649"</script>
-    <script type="text/javascript"> bcVersicherung1="0x212795dA9B7a58F9FD227381A07d1Cf74d42e771"</script>
-    <script type="text/javascript"> bcVersicherung2="0x212795dA9B7a58F9FD227381A07d1Cf74d42e771"</script>
-    <script type="text/javascript"> bcBank="0xE249Ec6CCB531E000BaE2bc0B6308A8621f06c05"</script>
-
 
     <script type="text/javascript"> fgDefaultGaslimit = "200000000"</script>
     <script type="text/javascript"> fgDefaultGasprice = "10000000000"</script>
@@ -105,36 +100,12 @@
               <th>Währung</th>
             </tr>
             <tr>
-              <td class="feld">Kooperations-Manager</td>
+              <td class="feld">Coin-Manager</td>
               <td><input v-model="kpManager" size="50" class="eingabe" ></td>
               <td class="adresse">{{ kpManagerSaldo }} </td>
               <td class="adresse">{{ bcWaehrung }} </td>
             </tr>
-            <tr>
-                <td class="feld">Versicherung digitalNr1</td>
-                <td><input v-model="bcVersicherung1" size="50" class="eingabe" ></td>
-                <td class="adresse">{{ bcVersicherung1Saldo }} </td>
-                <td class="adresse">{{ bcWaehrung }} </td>
-              </tr>
-              <tr>
-                <td class="feld">Versicherung AsienInvasion (LTD)</td>
-                <td><input v-model="bcVersicherung2" size="50" class="eingabe" ></td>
-                <td class="adresse">{{ bcVersicherung2Saldo }} </td>
-                <td class="adresse">{{ bcWaehrung }} </td>
-              </tr>
-            <tr>
-                <td class="feld">Spedition fast&furios</td>
-                <td><input v-model="bcSpedition" size="50" class="eingabe" ></td>
-                <td class="adresse">{{ bcSpeditionSaldo }} </td>
-                <td class="adresse">{{ bcWaehrung }} </td>
-              </tr>
-    
-            <tr>
-              <td class="feld">Bank Traditionale AG</td>
-              <td><input v-model="bcBank" size="50" class="eingabe" ></td>
-              <td class="adresse">{{ bcBankSaldo }} </td>
-              <td class="adresse">{{ bcWaehrung }} </td>
-            </tr>
+
           </table>
 
           <div class="ebene1">
